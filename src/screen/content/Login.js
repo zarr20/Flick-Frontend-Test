@@ -30,6 +30,7 @@ class Login extends React.Component {
       })
       .catch(function (error) {
         self.setState({ login: false });
+        alert("Email / Password Salah");
       });
     // this.state.login && this.props.Login;
   };
