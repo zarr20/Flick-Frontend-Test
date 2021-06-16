@@ -14,7 +14,11 @@ export default class Detail extends React.Component {
 
   componentDidMount() {
     axios
-      .get("../positions/" + id_detail + ".json")
+      .get(
+        "https://api.allorigins.win/raw?url=https://jobs.github.com/positions/" +
+          id_detail +
+          ".json"
+      )
       .then((response) => {
         this.setState({ data: response.data, isLoading: false });
         console.log(this.state.data);

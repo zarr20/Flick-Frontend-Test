@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../component/Header";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Cari from "./content/Cari";
 import Detail from "./content/Detail";
 import Login from "./content/Login";
@@ -19,7 +19,7 @@ class Main extends React.Component {
 
   render() {
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Header />
         {this.props.isLogin ? (
           <Switch>

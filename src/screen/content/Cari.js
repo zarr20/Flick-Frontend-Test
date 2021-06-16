@@ -18,26 +18,32 @@ export default class Cari extends React.Component {
   }
 
   componentDidMount() {
-    axios
-      .get("positions.json")
+    axios(
+      "https://api.allorigins.win/raw?url=https://jobs.github.com/positions.json",
+      {
+        proxy: {
+          host: "https://jobs.github.com/",
+        },
+      }
+    )
       .then((response) => {
         this.setState({ jobs: response.data, isLoading: false });
-        // console.log(this.state.jobs);
+        console.log(this.state.jobs);
       })
       .catch(function (error) {
-        // console.log(error);
+        console.log(error);
       });
   }
 
   handlerInputChange = (e) => {
     console.log(e.target.name);
-    if (e.target.name === "keySearch") {
+    if (e.target.name == "keySearch") {
       this.setState({ keyCari: e.target.value });
     }
-    if (e.target.name === "keyLocation") {
+    if (e.target.name == "keyLocation") {
       this.setState({ keyLokasi: e.target.value });
     }
-    if (e.target.name === "FulltimeOnly") {
+    if (e.target.name == "FulltimeOnly") {
       this.setState({ OnlyFulltime: !this.state.OnlyFulltime });
     }
 
