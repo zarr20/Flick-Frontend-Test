@@ -1,0 +1,25 @@
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    justify-content: center;
+}
+
+.login-wrapper input {
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.login-wrapper label {
+    width: 100%;
+}
+
+.login-wrapper button {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.login-wrapper form {
+    width: 400px;
+}
